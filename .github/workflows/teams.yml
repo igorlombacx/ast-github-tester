@@ -11,6 +11,11 @@ on:
         description: 'Channels to publish development releases'
         required: false
         type: string
+      javawrapperversion:
+        description: 'Java Wrapper Version'
+        required: true
+        type: string
+        default: '1.0.57'
   workflow_dispatch:
     inputs:
       tag:
@@ -21,6 +26,11 @@ on:
         description: 'Channels to publish development releases'
         required: false
         type: string
+      javawrapperversion:
+        description: 'Java Wrapper Version'
+        required: true
+        type: string
+        default: '1.0.57'
 
 jobs:
   notify:
