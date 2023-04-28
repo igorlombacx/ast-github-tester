@@ -30,11 +30,9 @@ jobs:
         env:
           prerelease: ${{ inputs.channels != '' && inputs.channels != null}}
         run: |
-          echo "prerelease: $prerelease"
-          run: |
-            if ${{ inputs.channels != '' && inputs.channels != null }}; then
-              echo "input correct"
-            fi
-            if${{ inputs.channels == '' || inputs.channels == null }}; then
-              echo "input null or empty"
-            fi
+          if [ -z "${{ inputs.channels != '' && inputs.channels != null}}" ]
+          then
+            echo "input null or empty"
+          else
+            echo "input correct"
+          fi
