@@ -1,5 +1,7 @@
 name: Notify
 
+name: Release
+
 on:
   workflow_call:
     inputs:
@@ -7,30 +9,30 @@ on:
         description: 'Next release tag'
         required: true
         type: string
-      channels:
-        description: 'Channels to publish development releases'
-        required: false
-        type: string
       javawrapperversion:
         description: 'Java Wrapper Version'
         required: true
         type: string
         default: '1.0.57'
+      channels:
+        description: 'Channels to publish development releases'
+        required: false
+        type: string
   workflow_dispatch:
     inputs:
       tag:
         description: 'Next release tag'
         required: true
         type: string
-      channels:
-        description: 'Channels to publish development releases'
-        required: false
-        type: string
       javawrapperversion:
         description: 'Java Wrapper Version'
         required: true
         type: string
         default: '1.0.57'
+      channels:
+        description: 'Channels to publish development releases'
+        required: false
+        type: string
 
 jobs:
   notify:
