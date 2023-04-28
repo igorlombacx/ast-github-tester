@@ -26,12 +26,6 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send a Notification
-        id: notify
-        uses: thechetantalwar/teams-notify@v2
-        with:
-          teams_webhook_url: ${{ secrets.TEAM_HOOK }}
-          message: "Github Action Build Number logs  sdfsd ### TEST "
       - name: Test inputs
         env:
           prerelease: ${{ inputs.channels != '' && inputs.channels != null}}
