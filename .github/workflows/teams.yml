@@ -26,6 +26,10 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${{ inputs.tag }}" >> $GITHUB_ENV
+      - name: Print env
+        run: echo $RELEASE_VERSION
       - name: Test inputs
         env:
           prerelease: ${{ inputs.channels != '' && inputs.channels != null}}
